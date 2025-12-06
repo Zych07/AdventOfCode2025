@@ -92,10 +92,7 @@ namespace AdventOfCode2025
             }
             ranges = ranges.OrderBy(x => x.Item1).ToList();
             foreach (var range in ranges)
-            {
-                Console.WriteLine(range);
                 freshFoodCount += (range.Item2 - range.Item1) + 1;
-            }
 
             return freshFoodCount;
         }
