@@ -53,7 +53,7 @@ namespace AdventOfCode2025
 
             List<int> currentBeamX = new();
             bool[,] splitersMap = new bool[lines.Length, lines[0].Length];
-            int[,] spliterCounterMap = new int[lines.Length, lines[0].Length];
+            long[,] spliterCounterMap = new long[lines.Length, lines[0].Length];
 
             for (int i = 0; i < lines.Length; i++)
             {
@@ -78,7 +78,7 @@ namespace AdventOfCode2025
             return spliterCounter;
         }
 
-        public int SpliterTimeline(bool[,] spliterMap, int[,] spliterCounterMap, int currentBeamX, int currentBeamY)
+        public long SpliterTimeline(bool[,] spliterMap, long[,] spliterCounterMap, int currentBeamX, int currentBeamY)
         {
             if (currentBeamY >= spliterMap.GetLength(0))
                 return 1;
@@ -86,7 +86,7 @@ namespace AdventOfCode2025
             if (spliterCounterMap[currentBeamY, currentBeamX] != -1)
                 return spliterCounterMap[currentBeamY, currentBeamX];
 
-            int splitersSum = 0;
+            long splitersSum = 0;
 
             if (spliterMap[currentBeamY, currentBeamX])
             {
